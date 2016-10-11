@@ -1,5 +1,9 @@
 {
     "name": "Zefiros-Software/bgfx",
     "requires": [
+	{
+            "name": "Zefiros-Software/bx",
+            "version": "@head"
+        }
     ]
 }
