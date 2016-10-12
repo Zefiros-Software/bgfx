@@ -16,6 +16,7 @@ project "bgfx"
 
     includedirs {
 	"3rdparty",
+        "3rdparty/khronos",
 	"3rdparty/dxsdk/include",
  	"include",
 	}
@@ -76,6 +77,7 @@ project "bgfx"
 
 	includedirs {
            "3rdparty",
+           "3rdparty/khronos",
            "3rdparty/dxsdk/include",
            "include",
         }
