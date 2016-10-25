@@ -1,133 +1,78 @@
 
 project "bgfx"
-
-    kind "StaticLib"
- 
+    kind "StaticLib" 
 
     files {
-       "include/**.h",
-	"src/**.cpp",
+        "include/**.h",
+	    "src/**.cpp",
         "src/**.h"
-      }
+    }
 
-    removefiles {
-         "src/**.bin.h",
-	}
-
-    includedirs {
-	"3rdparty",
-        "3rdparty/khronos",
-	"3rdparty/dxsdk/include",
- 	"include",
-	}
-
-    filter { "system:windows", "not action:android" }
-	
-	links {
-	    "gdi32",
-	    "psapi",
-	      }
-
-    filter "system:linux"
-	
-	links {
-		"X11",
-		"GL",
-		"pthread",
-	      }
-
-	buildoptions {
-		"-fPIC",
-		}
-	
-    filter { "system:macosx", "not action:ios" }
-
-	linkoptions {
-			"-framework Cocoa",
-			"-framework QuartzCore",
-			"-framework OpenGL",
-			"-weak_framework Metal",
-		    }   
-    
-	files {
-		"src/glcontext_**.mm",
-		"src/renderer_**.mm",
-	      }
-
-    filter "action:android"
-
-	links {
-		"EGL",
-		"GLESv2",
-	      }
-    filter "action:ios"
-
-	linkoptions {
-			"-framework CoreFoundation",
-			"-framework Foundation",
-			"-framework OpenGLES",
-			"-framework UIKit",
-			"-framework QuartzCore",
-			"-weak_framework Metal",
-		}
-
-    filter {} 
+    removefiles "src/**.bin.h"
 
     zpm.export(function()
 
-	includedirs {
-           "3rdparty",
-           "3rdparty/khronos",
-           "3rdparty/dxsdk/include",
-           "include",
+        includedirs {
+            "3rdparty/dxsdk/include",
+            "3rdparty/khronos",
+            "3rdparty",
+            "include",
+        }        
+
+        zpm.uses {
+            "Zefiros-Software/bx"
         }
 
-	filter { "system:windows", "not action:android" }
-
+        filter { "system:windows", "not action:android" }        
             links {
-            "gdi32",
-            "psapi",
-              }
+                "gdi32",
+                "psapi"
+            }
 
         filter "system:linux"
-
-             links {
-                "X11",
-                "GL",
+        
+            links {
                 "pthread",
-               }
+                "X11",
+                "GL"
+            }
 
-	filter { "system:macosx", "not action:ios" }
+            buildoptions {
+                "-fPIC"
+                }
+        
+        filter { "system:macosx", "not action:ios" }
 
-        	linkoptions {
-                        "-framework Cocoa",
-                        "-framework QuartzCore",
-                        "-framework OpenGL",
-                        "-weak_framework Metal",
-                    }
+            linkoptions {
+                    "-framework Cocoa",
+                    "-framework QuartzCore",
+                    "-framework OpenGL",
+                    "-weak_framework Metal"
+                }   
+            
+            files {
+                "src/glcontext_**.mm",
+                "src/renderer_**.mm"
+            }
 
-	filter "action:android"
+        filter "action:android"
 
-             links {
+            links {
                 "EGL",
-                "GLESv2",
-              }
-    	filter "action:ios"
+                "GLESv2"
+            }
 
-               linkoptions {
-                        "-framework CoreFoundation",
-                        "-framework Foundation",
-                        "-framework OpenGLES",
-                        "-framework UIKit",
-                        "-framework QuartzCore",
-                        "-weak_framework Metal",
+        filter "action:ios"
+
+            linkoptions {
+                    "-framework CoreFoundation",
+                    "-framework Foundation",
+                    "-framework OpenGLES",
+                    "-framework UIKit",
+                    "-framework QuartzCore",
+                    "-weak_framework Metal",
                 }
 
-        filter {}
+            filter {}
 
     end)
-
-    zpm.uses {
-	"Zefiros-Software/bx"
-    }
-
