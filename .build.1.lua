@@ -12,6 +12,9 @@ project "bgfx"
         "src/amalgamated*",
         "src/**.bin.h" 
     }
+
+    filter "system:windows"
+        linkoptions "/ignore:4221"
     
     filter { "system:macosx", "not action:ios" }
 
