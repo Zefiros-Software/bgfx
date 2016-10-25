@@ -8,7 +8,19 @@ project "bgfx"
         "src/**.h"
     }
 
-    removefiles "src/**.bin.h"
+    removefiles {
+        "src/amalgamated*",
+        "src/**.bin.h" 
+    }
+    
+    filter { "system:macosx", "not action:ios" }
+
+        files {
+            "src/glcontext_**.mm",
+            "src/renderer_**.mm"
+        }
+
+    filter {}
 
     zpm.export(function()
 
@@ -73,6 +85,6 @@ project "bgfx"
                     "-weak_framework Metal",
                 }
 
-            filter {}
+        filter {}
 
     end)
