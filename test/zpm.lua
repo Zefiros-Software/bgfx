@@ -15,6 +15,6 @@ workspace "bgfx"
             "extern/Zefiros-Software/bgfx-@head/examples/common/"
         }
         files {
-            --"extern/Zefiros-Software/bgfx-@head/examples/common/**.cpp",
+            "extern/Zefiros-Software/bgfx-@head/examples/common/entry.cpp",
             --"extern/Zefiros-Software/bgfx-@head/examples/common/**.c"
         }
