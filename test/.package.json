@@ -1,0 +1,10 @@
+{
+    "name": "Zefiros-Software/bgfx-Dev",
+    "requires": [
+        {
+            "name": "Zefiros-Software/bgfx",
+            "version": "@head",
+            "buildpath": "../"
+        }
+    ]
+}

@@ -11,7 +11,9 @@ project "bgfx"
     removefiles {
         "src/amalgamated*",
         "src/**.bin.h" 
-    }
+    } 
+
+    zpm.uses "Zefiros-Software/bx"
 
     filter "system:windows"
         linkoptions "/ignore:4221"
@@ -32,11 +34,7 @@ project "bgfx"
             "3rdparty/khronos",
             "3rdparty",
             "include",
-        }        
-
-        zpm.uses {
-            "Zefiros-Software/bx"
-        }
+        }       
 
         filter { "system:windows", "not action:android" }        
             links {
@@ -59,11 +57,11 @@ project "bgfx"
         filter { "system:macosx", "not action:ios" }
 
             linkoptions {
-                    "-framework Cocoa",
-                    "-framework QuartzCore",
-                    "-framework OpenGL",
-                    "-weak_framework Metal"
-                }   
+                "-framework Cocoa",
+                "-framework QuartzCore",
+                "-framework OpenGL",
+                "-weak_framework Metal"
+            }   
             
             files {
                 "src/glcontext_**.mm",
@@ -80,13 +78,13 @@ project "bgfx"
         filter "action:ios"
 
             linkoptions {
-                    "-framework CoreFoundation",
-                    "-framework Foundation",
-                    "-framework OpenGLES",
-                    "-framework UIKit",
-                    "-framework QuartzCore",
-                    "-weak_framework Metal",
-                }
+                "-framework CoreFoundation",
+                "-framework Foundation",
+                "-framework OpenGLES",
+                "-framework UIKit",
+                "-framework QuartzCore",
+                "-weak_framework Metal",
+            }
 
         filter {}
 
