@@ -47,7 +47,8 @@ project "bgfx"
             links {
                 "pthread",
                 "X11",
-                "GL"
+                "GL",
+                "dl"
             }
 
             buildoptions {
