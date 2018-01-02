@@ -2,11 +2,11 @@
     "name": "Zefiros-Software/bgfx",
     "requires": [
         {
-            "name": "Zefiros-Software/bx",
+            "name": "Zefiros-Software/bimg",
             "version": "@head"
         },
         {
-            "name": "Zefiros-Software/bimg",
+            "name": "Zefiros-Software/bx",
             "version": "@head"
         }
     ]
