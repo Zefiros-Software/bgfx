@@ -13,8 +13,8 @@ project "bgfx"
         "src/**.bin.h" 
     } 
 
-    zpm.uses { "Zefiros-Software/bx",
-               "Zefiros-Software/bimg" }
+    zpm.uses "Zefiros-Software/bx"
+    zpm.uses "Zefiros-Software/bimg"
 
     filter "system:windows"
         linkoptions "/ignore:4221"
