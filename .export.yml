@@ -11,14 +11,11 @@ export: |
         }
 
         removefiles {
-            "src/amalgamated*",
+            "src/amalgamated.**",
             "src/**.bin.h" 
         } 
 
-        zpm.uses {
-            "Zefiros-Software/bx",
-            "Zefiros-Software/bimg"
-        }
+        zpm.uses "Zefiros-Software/bimg"
 
         filter "system:windows"
             linkoptions "/ignore:4221"
@@ -80,6 +77,7 @@ export: |
         filter {}
 
         zpm.export(function()
+            zpm.uses "Zefiros-Software/bx"
 
             includedirs {
                 "3rdparty/dxsdk/include",

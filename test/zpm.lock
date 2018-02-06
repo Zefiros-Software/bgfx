@@ -14,6 +14,23 @@
           "repository": "https://github.com/bkaradzic/bx.git",
           "tag": "HEAD",
           "versionRequirement": "@head"
+        }, {
+          "definition": "https://github.com/Zefiros-Software/bimg.git",
+          "hash": "a954e3012f70906639765b61da1f90a867d52d36",
+          "name": "Zefiros-Software/bimg",
+          "public": {
+            "libraries": [ {
+              "definition": "https://github.com/Zefiros-Software/bx.git",
+              "hash": "8f9b407745ac25d3ed06f0243764daf4dd85e0ec",
+              "name": "Zefiros-Software/bx",
+              "repository": "https://github.com/bkaradzic/bx.git",
+              "tag": "HEAD",
+              "versionRequirement": "@head"
+            } ]
+          },
+          "repository": "https://github.com/bkaradzic/bimg.git",
+          "tag": "HEAD",
+          "versionRequirement": "@head"
         } ]
       },
       "repository": "https://github.com/bkaradzic/bgfx.git",
@@ -27,15 +44,14 @@
       "public": {
         "libraries": [ {
           "definition": "https://github.com/Zefiros-Software/GoogleTest.git",
-          "hash": "b4d333f14f977b3668de4e794d7d2e00b322d59a",
+          "hash": "a3c73ed28d7995b18d48027aee740ad827fcc157",
           "name": "Zefiros-Software/GoogleTest",
           "repository": "https://github.com/google/googletest.git",
-          "tag": "release-1.4.0",
-          "version": "1.4.0",
+          "tag": "HEAD",
           "versionRequirement": "@head || ^1.0.0"
         }, {
           "definition": "https://github.com/Zefiros-Software/GoogleBenchmark.git",
-          "hash": "4fe0206b658c6aa1d74a2278c26b50f0938a4e64",
+          "hash": "bc83262f9d687ac7e31509b3f5177ff391a7452a",
           "name": "Zefiros-Software/GoogleBenchmark",
           "repository": "https://github.com/google/benchmark.git",
           "tag": "HEAD",

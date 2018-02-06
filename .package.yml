@@ -2,3 +2,5 @@ public:
   libraries:
     - name: Zefiros-Software/bx
       version: '@head'
+    - name: Zefiros-Software/bimg
+      version: '@head'
