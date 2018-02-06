@@ -25,51 +25,8 @@ export: |
                 "src/renderer_**.mm"
             }
 
-        filter { "system:windows", "not action:android" }        
-            links {
-                "gdi32",
-                "psapi"
-            }
-
         filter "system:linux"
-        
-            links {
-                "pthread",
-                "X11",
-                "GL",
-                "dl"
-            }
-
-            buildoptions {
-                "-fPIC"
-                }
-            
-        filter { "system:macosx", "not action:ios" }
-
-            linkoptions {
-                "-framework Cocoa",
-                "-framework QuartzCore",
-                "-framework OpenGL",
-                "-weak_framework Metal"
-            } 
-
-        filter "action:android"
-
-            links {
-                "EGL",
-                "GLESv2"
-            }
-
-        filter "action:ios"
-
-            linkoptions {
-                "-framework CoreFoundation",
-                "-framework Foundation",
-                "-framework OpenGLES",
-                "-framework UIKit",
-                "-framework QuartzCore",
-                "-weak_framework Metal",
-            }  
+            pic "on"
                 
 
         filter {}
@@ -86,12 +43,53 @@ export: |
                 "3rdparty",
                 "include",
             }       
+
+            filter "system:linux"
             
+                links {
+                    "pthread",
+                    "X11",
+                    "GL",
+                    "dl"
+                }
+
+            filter { "system:windows", "not action:android" }        
+                links {
+                    "gdi32",
+                    "psapi"
+                }
+                    
             filter { "system:macosx", "not action:ios" }
+
+                linkoptions {
+                    "-framework Cocoa",
+                    "-framework QuartzCore",
+                    "-framework OpenGL",
+                    "-weak_framework Metal"
+                } 
+
                 files {
                     "src/glcontext_**.mm",
                     "src/renderer_**.mm"
                 }
+
+            filter "action:android"
+
+                links {
+                    "EGL",
+                    "GLESv2"
+                }
+
+            filter "action:ios"
+
+                linkoptions {
+                    "-framework CoreFoundation",
+                    "-framework Foundation",
+                    "-framework OpenGLES",
+                    "-framework UIKit",
+                    "-framework QuartzCore",
+                    "-weak_framework Metal",
+                } 
 
             filter {}
 
