@@ -15,10 +15,8 @@ export: |
             "src/**.bin.h" 
         } 
 
-        zpm.uses "Zefiros-Software/bimg"
-
         filter "system:windows"
-            linkoptions "/ignore:4221"
+            linkoptions "/ignore:4221 /ignore:4006"
         
         filter { "system:macosx", "not action:ios" }
 
@@ -77,7 +75,10 @@ export: |
         filter {}
 
         zpm.export(function()
-            zpm.uses "Zefiros-Software/bx"
+            zpm.uses {
+                "Zefiros-Software/bimg",
+                "Zefiros-Software/bx"
+            }
 
             includedirs {
                 "3rdparty/dxsdk/include",
