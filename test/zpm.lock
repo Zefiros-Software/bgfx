@@ -1,20 +1,51 @@
-
 {
-    "dependencies": [ 
-    {
-        "dependencies": [ 
-        {
-            "hash": "c2367da8968cca8b567eb4499fff2051fe7ea9ad",
-            "name": "Zefiros-Software/bx",
-            "tag": "master",
-            "type": "library",
-            "version": "@head"
-        }],
-        "hash": "a8cf2f86a94d003b3b67108427572ac2fd86fe79",
-        "name": "Zefiros-Software/bgfx",
-        "tag": "master",
-        "type": "library",
-        "version": "@head"
-    }],
-    "name": "Zefiros-Software/bgfx-Dev"
+  "definition": "./",
+  "optionals": [],
+  "private": {
+    "libraries": [ {
+      "definition": "../",
+      "hash": "ada4a7d657efc2192fd847c3432b2f86dbfc5b3f",
+      "name": "Zefiros-Software/bgfx",
+      "public": {
+        "libraries": [ {
+          "definition": "https://github.com/Zefiros-Software/bx.git",
+          "hash": "8f9b407745ac25d3ed06f0243764daf4dd85e0ec",
+          "name": "Zefiros-Software/bx",
+          "repository": "https://github.com/bkaradzic/bx.git",
+          "tag": "HEAD",
+          "versionRequirement": "@head"
+        } ]
+      },
+      "repository": "https://github.com/bkaradzic/bgfx.git",
+      "tag": "HEAD",
+      "versionRequirement": "@head"
+    } ],
+    "modules": [ {
+      "definition": "https://github.com/Zefiros-Software/ZefirosDefaults.git",
+      "hash": "130feb5efe53d69a63c995e4d37e0edd0f9bbb80",
+      "name": "Zefiros-Software/Defaults",
+      "public": {
+        "libraries": [ {
+          "definition": "https://github.com/Zefiros-Software/GoogleTest.git",
+          "hash": "b4d333f14f977b3668de4e794d7d2e00b322d59a",
+          "name": "Zefiros-Software/GoogleTest",
+          "repository": "https://github.com/google/googletest.git",
+          "tag": "release-1.4.0",
+          "version": "1.4.0",
+          "versionRequirement": "@head || ^1.0.0"
+        }, {
+          "definition": "https://github.com/Zefiros-Software/GoogleBenchmark.git",
+          "hash": "4fe0206b658c6aa1d74a2278c26b50f0938a4e64",
+          "name": "Zefiros-Software/GoogleBenchmark",
+          "repository": "https://github.com/google/benchmark.git",
+          "tag": "HEAD",
+          "versionRequirement": "@head"
+        } ]
+      },
+      "repository": "https://github.com/Zefiros-Software/ZefirosDefaults.git",
+      "tag": "HEAD",
+      "versionRequirement": "@head"
+    } ]
+  },
+  "repository": "./"
 }

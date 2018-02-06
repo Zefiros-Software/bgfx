@@ -1,0 +1,4 @@
+public:
+  libraries:
+    - name: Zefiros-Software/bx
+      version: '@head'
