@@ -4,20 +4,18 @@ matrix:
   include:
   - os: linux
     dist: trusty
-    env: VERSION=6
-  - os: linux
-    dist: trusty
     env: VERSION=7
-  - os: linux
-    dist: trusty
-    env: VERSION=5
   - os: osx
-    osx_image: xcode8
+    osx_image: xcode9.2
     language: generic
+global:
+  env:
+  - PROJECT=bgfx
+  - PROJECT_TEMPLATE=latest
 install:
-- source /dev/stdin <<< "$(curl -s https://raw.githubusercontent.com/Zefiros-Software/ZPM/features/refactor/script/install-zpm.sh)"
+- source /dev/stdin <<< "$(curl -s https://raw.githubusercontent.com/Zefiros-Software/ZPM/dev/script/install-zpm.sh)"
 script:
 - cd test && zpm run test-definition bgfx
 notifications:
   slack:
-    secure: B9GYTxT4k9M/6DjlGO/yAutzrd3f8iinVjoPeap/GjAaSweigOniQtG/IxUAdr9nUHFfTexhTc3+Gl/mcp/ZtbZsnqMQ3y91MoPQej/iBO0rtpCONI3uR3MErU5kHJMXIaCQFGKZBe61lwpR8Bj636WS4nMtunMI51sYO2E4CnF3+b9HEpVVOipiIS4+Q44HvchjVPR3FqF+BsrzVnTol+C4iw7SQ//BCm0gDyMAZP54RLiuESZQFQn2X8d5a7aKJblG3pQxvTlMdOWHFFJtfJdNGr7qPqr5HHhnzBjEgFAB3B4bWwW/I3/XKmTVYSoztYXqwo2FCw9PVa/JqF/mUwG9fwilYm+iAfJ/PT/64+9OtrGWrt7a65aOri5/mVbHMKoSRWGcHk5xzkI1bium+66JdZts0Jmb3V2/sN+LLqNewK9tKbDrXAJ1RaxO+w8wKRB4xNFY1qZv3ac1KQRIgixLJ3m4Jg46AenFpcwkAHcWgZXozkUlI2kxyjjD4xSpsZtatSbPt1cXJH7eLzJLOSde70BuzwYcdTmWGokBFc4cFs/gBFfDIInMGIwlR5cCb/2vvBFeJvP4wgVY/AqX7itTF8aitWB6mF2i8uIpZ6qTjNHCIaARfTus0xqP+phV1PXDRwn2/mioAZ3V+TPawmh4krOqvyiP90EDSdg6oJc=
+    secure: TbUoRKXiT2XP6QEkIEm+ey2pwL0uj5ApDxUnf8B2ifPKZuAY9AfmMGz7boCJF4NsPutyJ/KyA+LKD49ZPwDCSHU6t0ULORNhLzdQBDOIPSd7gC14dMTpR0tPVAS5Qe9HParewmud1hZe/9QzTG98hsrv/cHusAf/MIcPQtIVdqAlebM0w6Clk6lYBs8x+XMGcyTMTDnh30tFVZRsEYOhbHbfTEbRsICsdhGMjhlASOs0xWDRAmqiwPvzKpcdrXlS6A7X8UXRv9Ds4PqhxDAnwxIuJaSiE5OmCrNAfuLn+1QW7DafNvOCj6BPBNDWPLRzDgJBXvjibHGrj0t4x83BpsVUo0LQ7y07MXXdioJ9kEchNkxfTLz0oVTFUDruBz9DamCfC18HrS6XLBEcZWdN8vN2XxuXVuP+UQ+NoXjlaCjUFuqaN1cHpPiiaY+l+Ecg/AfspgTL0681irg4qjg+C0gHVWXCwMFZU4tVKxuz5fTOGoBTb7cZFP/6yBgpWG60Ykh4CrqpDGXS14Z+eZSjxXz90kPMAEJw9e98h8k0U/yd+fRClwdUefoQcLRaUPmJnEHIM5SDgC1iDI7Z+im7yupr/UWCYiEdIhTSR0v3RkXLmUO2c6U3OCDfHeQ/QH+fdYhfiiQc4ztG/BlI2BE5Q/lFzL/I4OxIQ2IxNlA/2+o=
