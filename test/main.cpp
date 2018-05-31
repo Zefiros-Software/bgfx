@@ -14,7 +14,6 @@ class ExampleHelloWorld
 {
 public:
 	ExampleHelloWorld(const char* _name, const char* _description)
-		: entry::AppI(_name, _description)
 	{
 	}
 
