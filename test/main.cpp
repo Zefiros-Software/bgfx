@@ -13,7 +13,7 @@ namespace
 class ExampleHelloWorld
 {
 public:
-	ExampleHelloWorld(const char* _name, const char* _description)
+	ExampleHelloWorld()
 	{
 	}
 
