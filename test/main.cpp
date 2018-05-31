@@ -7,9 +7,6 @@
 #include "bgfx/embedded_shader.h"
 #include "logo.h"
 
-namespace
-{
-
 class ExampleHelloWorld
 {
 public:
@@ -94,10 +91,9 @@ public:
 	uint32_t m_debug;
 	uint32_t m_reset;
 };
+
 int main(int argc, char **argv)
 {
     ExampleHelloWorld ex;
     return 0;
 }
-
-} // namespace
