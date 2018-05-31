@@ -18,7 +18,7 @@ public:
 	{
 	}
 
-	void init(int32_t _argc, const char* const* _argv, uint32_t _width, uint32_t _height) override
+	void init(int32_t _argc, const char* const* _argv, uint32_t _width, uint32_t _height)
 	{
 		Args args(_argc, _argv);
 
@@ -47,7 +47,7 @@ public:
 			);
 	}
 
-	virtual int shutdown() override
+	virtual int shutdown()
 	{
 		// Shutdown bgfx.
 		bgfx::shutdown();
@@ -55,7 +55,7 @@ public:
 		return 0;
 	}
 
-	bool update() override
+	bool update()
 	{
         // Set view 0 default viewport.
         bgfx::setViewRect(0, 0, 0, uint16_t(m_width), uint16_t(m_height) );
