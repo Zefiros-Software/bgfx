@@ -10,7 +10,7 @@
 namespace
 {
 
-class ExampleHelloWorld : public entry::AppI
+class ExampleHelloWorld
 {
 public:
 	ExampleHelloWorld(const char* _name, const char* _description)
@@ -93,8 +93,6 @@ public:
 
         return true;
 	}
-
-	entry::MouseState m_mouseState;
 
 	uint32_t m_width;
 	uint32_t m_height;
